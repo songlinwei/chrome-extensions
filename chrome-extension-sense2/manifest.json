@@ -1,0 +1,47 @@
+{
+  //https://mp.weixin.qq.com/profile?src=3&timestamp=1512628241&ver=1&signature=2gB89yfIFqksZiC4FfumYGwIisyG26cLoMyp3zDqoLuKP*gc*rHT3NRFh--z0dhOpdvKcPgCfsJxLqyJbyfDBg==
+
+  "manifest_version": 2,
+  "name": "浏览器扩展-获取-商汤科技微信号: SenseTime2017",
+  "version": "1.0",
+  "description": "扩展描述：获取-商汤科技微信号: SenseTime2017",
+  "icons": {
+    "16": "icons/border-48.png",
+    "48": "icons/border-48.png",
+    "128": "icons/border-48.png"
+  },
+  "background": {
+    "scripts": [
+      "vendor/jquery-2.1.4.min.js",
+      "vendor/FileSaver.js",
+      "js/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "vendor/jquery-2.1.4.min.js",
+        "js/content-script.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "browser_action": {
+    "default_title": "这是一个test扩展",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "notifications",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "downloads",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
